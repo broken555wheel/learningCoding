@@ -1,4 +1,4 @@
-//function to get number of hourse slept each day
+//function to get number of hours slept each day
 function getSleepHours (day){
     day.toLowerCase();
     switch (day){
