@@ -26,5 +26,5 @@ for(let i=0;i<input.length;i++){
 //logging resusltArray to the console
 console.log(resultArray);
 //joining elements in resultArray and capitalizing them
-const resultString = resultArray.join('').toUpperCase()
-console.log(resultString)
+const resultString = resultArray.join('').toUpperCase();
+console.log(resultString);
