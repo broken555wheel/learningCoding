@@ -1,7 +1,11 @@
+import random
+import module  # used to import modules
+from module import pounds_to_kg  # used to import a specific module method
+
 print("David Mwalimu")
 print("o----")
 print(" ||||")
-print("*"*10)
+print("*" * 10)  # prinys * 10 times
 # the above code is an expression i.e. it produces a value
 
 
@@ -19,7 +23,6 @@ patient_name = "John Smith"
 patient_age = 20
 patient_new = True
 
-
 # GETTING INPUT
 # input()-inbuilt function used to get user input
 name = input("What is your name? ")
@@ -29,7 +32,7 @@ print("Hi " + name)  # string concatenation
 # two questions
 name1 = input("What is your name? ")
 color = input("What is your favorite color? ")
-print(name1+" likes the color "+color)
+print(name1 + " likes the color " + color)
 
 # TYPE CONVERSION
 birth_year = input("Birth year: ")  # whatever is typed in the terminal is i.e. from the input function is a string
@@ -41,15 +44,14 @@ name2 = input("What is your name? ")
 print("Hi " + name)
 num1 = int(input("Enter the first number: "))  # type conversion from the get go
 num2 = input("Enter the second number: ")
-sum = num1+int(num2)
+sum = num1 + int(num2)
 print(type(num1))  # type() is an inbuilt function used to display the value's datatype
-print("The sum of ", num1 , " and " + num2 + " is ", sum)  # concatenation of a string and an int
+print("The sum of ", num1, " and " + num2 + " is ", sum)  # concatenation of a string and an int
 
 # pounds to kg
 pounds = int(input("Enter your weight in pounds: "))
-kg = float(pounds)*0.453592
+kg = float(pounds) * 0.453592
 print("You weigh ", pounds, "pounds which is equivalent to ", kg, " kgs")
-
 
 # STRINGS
 course = "Python's course for beginners"
@@ -64,12 +66,11 @@ print(course[:5])  # prints all characters up to the fifth. 0 is assumed to be t
 print(course[:])  # prints all the characters of the string
 print(course[1:-1])  # prints all the characters up to the one before the last one(pretty simple)
 
-
 # FORMATTED STRINGS
 # variable names should be descriptive
 first = "John"
 last = "Smith"
-message = first + '['+last+'] is a coder'
+message = first + '[' + last + '] is a coder'
 msg = f'{first} [{last}] is a coder'  # f'' refers to a formatted string
 # Curly braces({}) are used as placeholders for our variables and allow us to dynamically insert values into our strings
 # message == msg
@@ -83,8 +84,8 @@ print(course.find('P'))  # find() - case sensitive method that returns the index
 # index of a word
 print(course.replace("course", "class"))  # case-sensitive method used to replace a character or a sequence of
 # characters. The character(s) to be replaced is placed first, then the replacer second.
-print("Python" in course)  # in expression is used to check whether characters are in a string. It produces boolean values
-
+print(
+    "Python" in course)  # in expression is used to check whether characters are in a string. It produces boolean values
 
 # ARITHMETIC OPERATIONS
 # +: addition
@@ -102,7 +103,7 @@ print("Python" in course)  # in expression is used to check whether characters a
 
 
 # MATH FUNCTIONS
-x=2.9
+x = 2.9
 print(round(x))  # rounds off a number
 # abs() returns the absolute value of a number
 # import math - used to import the math method.
@@ -110,11 +111,11 @@ print(round(x))  # rounds off a number
 # python3 math module for others
 
 
-#IF STATEMENTS
-is_hot = True;
+# IF STATEMENTS
+is_hot = True
 if is_hot:
     print("It's a hot day, enjoy your day")
-    print("Drink plenty of water") # indented statements will be executed if the evaluation is true
+    print("Drink plenty of water")  # indented statements will be executed if the evaluation is true
 # elif can be used if there are more conditions
 else:
     print("It's a cold day")
@@ -125,13 +126,12 @@ print("Enjoy your day")
 price = 1000000
 good_credit = input("Is the credit score good?(y or n)")
 if good_credit.upper() == "Y":
-    down_payment = 0.1*price
+    down_payment = 0.1 * price
 else:
-    down_payment = 0.2*price
+    down_payment = 0.2 * price
 print(down_payment)
 
-
-#LOGICAL OPERATORS
+# LOGICAL OPERATORS
 # logical and returns true if both conditions evaluate to true
 has_high_income = True
 has_good_credit = True
@@ -142,7 +142,6 @@ if has_high_income and has_good_credit:
 if has_high_income or not has_good_credit:
     print("Not eligible for loan")
 
-
 # COMPARISON OPERATORS
 # a>b a greater than b
 # a==b a is equivalent to b
@@ -151,9 +150,9 @@ if has_high_income or not has_good_credit:
 
 # Client name
 client_name = input("What is your name? ")
-if len(client_name)<3:
+if len(client_name) < 3:
     print("Error! Name is too short")
-elif len(client_name)>50:
+elif len(client_name) > 50:
     print("Error! Name is too long")
 else:
     print("Name looks good")
@@ -162,14 +161,13 @@ else:
 weight = int(input("Enter your weight: "))
 unit = input("(L)bs or (K)g: ")
 if unit.upper() == "L":
-    weight_new = weight*0.453592
+    weight_new = weight * 0.453592
     print(weight_new)
 elif unit.upper() == "K":
-    weight_new = weight/0.453592
+    weight_new = weight / 0.453592
     print(weight_new)
 else:
     print('Invalid unit entered. Enter a unit that is either L for pounds or K for kilograms')
-
 
 # WHILE LOOPS
 # used to execute a block of code as long as a condition remains true
@@ -195,3 +193,312 @@ else:
 
 
 # FOR LOOPS
+for item in "Python":  # item is set to each letter for each iteration
+    print(item)
+# lists in python are defined using []
+for item in ["David", "Mwalimu", "Nzambuli"]:
+    print(item)
+# range() - inbuilt function used to set the range(an object) for a given set of numbers
+for item in range(10):  # Includes 0,1,2,3,4,5,6,7,8,9
+    print(item)
+# range(x,y) - includes numbers from x to y-1
+# range(x,y,2) -includes numbers from x to y-1, with a common difference of 2
+
+# Total Cost of items
+prices = [10, 20, 30]
+sum1 = 0
+for item in prices:
+    sum1 += item
+print(sum1)
+
+# NESTED LOOPS
+for x in range(4):  # sample x coordinate
+    for y in range(3):  # sample y cordinate
+        print(f"{x},{y}")
+# for each outer iteration, all inner terations must be executed
+
+# F SHAPE
+numbers = [5, 2, 5, 2, 2]
+for number in numbers:
+    print("*" * number)
+# using nested loop
+for x_count in numbers:
+    output = ''
+    for count in range(x_count):
+        output += 'x'
+    print(output)
+
+# LISTS
+names = ["John", "Bob", "Mosh", "Sarah", "Mary"]
+print(names[0])  # indexing is used to print individual elements(similar to strings)
+# largest number
+num = [12, 14, 18, 11, 16]
+max = num[0]
+for x in num:
+    if max < x:
+        max = x
+print(max)
+
+# 2D lists
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+# Accessing of individual elements is done by indexing
+# Looping is done using nested for loops
+for a in matrix:
+    for b in a:
+        print(b)  # prints all the elements in the list
+
+# LIST METHODS
+numbers.append(20)  # adds the number at the end of the list
+print(numbers)
+numbers.insert(0, 10)  # used to add an element at a specific index i.e. list.insert(index,element)
+numbers.remove(11)  # used to remove an element from the list
+numbers.clear()  # used to delete all the elements in the list
+numbers.pop()  # removes the last element in our list
+numbers.index(12)  # returns the index of the element and if it doesn't exist, an error is returned
+12 in numbers  # returns a boolean expression depending on whether the element exists in the list
+numbers.count(11)  # returns the number of times an element appears in a list
+numbers.sort()  # doesn't return a value, instead sorts the list
+numbers.reverse()  # reversed the list  \
+numbers2 = numbers.copy()  # copies the elements of list1 into list2 
+# REMOVING DUPLICATES
+num2 = [4, 4, 4, 5, 6, 7, 7, 7, 8, 9, 10];
+# modifying a list while iterating over it can lead to unexpected behavior.
+uniques = []
+for z in num2:
+    if z not in uniques:
+        uniques.append(z)
+print(uniques)
+
+# TUPLES
+# Similar to lists but are immutable
+numbers3 = (1, 2, 3)  # defining a tuple
+# a tuple has count and index as its method with the rest being majic methods
+
+# UNPACKING
+coordinates = (1, 2, 3)
+a1, a2, a3 = coordinates  # assigns the elements in the tuple to the variables on the left respectively
+# unpacking can also work for lists
+
+# DICTIONARIES
+# used to store values that comes as key value pairs
+client = {
+    "Name": "John Smith",
+    "Age": 30,
+    "is_verified": True
+    # each key should be unique
+}
+# access is done using [] i.e
+print(client["Name"])  # case sensitive
+# if the key doesn't exist, an error will be thrown alternatively, we could use the get method which does not throw
+# an error in case the key doesn't exist. It instead returns none dictionary.get(key, default)
+print(client.get("name"))  # returns None since it's also case-sensitive
+# we can also use get to define a new key value pair
+print(client.get("Birthday", "March 11th 2004"))
+# we can also update and add values using []
+client["Height"] = "6'2"  # adding a new key value pair
+client["Name"] = "David Mwalimu"  # changing an existing key value pair
+# NUMBERS TO WORDS
+phone = input("Phone: ")
+digits = {
+    "1": "one",
+    "0": "zero",
+    "2": "two",
+    "3": "three",
+    "4": "four",
+    "5": "five",
+    "6": "six",
+    "7": "seven",
+    "8": "eight",
+    "9": "nine"
+}
+output = ""
+for x in phone:
+    output += digits.get(x, "!") + " "
+print(output)
+# EMOJI CONVERTER
+message = input(">")
+words = message.split(" ")  # .split() is a methods used to separate  string with the separaton happening at the point
+# defined in the split method. It returns a list with the separation making the elements. The split element i not
+# returned
+emojis = {
+    ":)": "😁",
+    ":(": "😌"
+}
+output2 = ""
+for word in words:
+    output2 += emojis.get(word, word) + ""
+print(output2)
+
+
+# FUNCTIONS
+# def is a  keyword used to define functions
+def greet_user():
+    print("Hi There!")
+    print("Welcome aboard!")
+
+
+print("Start")
+greet_user()
+print("Finish")
+
+
+# a function must alway be called after it is defined
+
+# PARAMETERS
+# values taken by a function
+def greet_user2(name):
+    print(f"Hi {name}")
+    print("Welcome Aboard")
+
+
+name3 = input("What is your name? ")
+greet_user2(name3)
+
+
+# if a parameter is set for a function, the argument must be provided otherwise an error will be returned
+# for positional arguments, the position matters i.e. they will be returned in the order they are provided
+
+# KEYWORD ARGUMENTS
+# defined using the parameter nme when providing the arguments
+def greet_user3(first_name, last_name):
+    print(f"Hi {first_name} {last_name}")
+    print("Welcome aboard")
+
+
+greet_user3("Nzambuli", first_name="David")  # keyword argument
+
+
+# Keyword arguments should always come after keyword
+
+# RETURN STATEMENT
+# used to produce the output of a function
+def square(number):
+    return number ** 2
+
+
+print(square(16));
+# without the return statement, the function will return None(represents the abscence of a value) when we print the
+# output of the function if we replace the return with print, we get both the square and None as output
+
+# CREATING A REUSABLE FUNCTION
+text = input(">")
+
+
+def emoji_converter(user_input):
+    words = user_input.split(" ")
+    emojis = {
+        ":)": "😄",
+        ":(": "😟",
+        ":|": "😐"
+    }
+    output3 = ""
+    for word in words:
+        output3 += emojis.get(word, word) + " "
+    return output3
+
+
+print(emoji_converter(text))
+# input and output shouldn't be included in functions since they should be reusable
+
+# EXCEPTIONS
+# exit coe 0 means that our program executed with no problem
+# anything but 0 means that our program crashed
+# try except is used to handle errors
+try:
+    miaka = int(input("Age: "))
+    print(age)
+except ValueError:
+    print("Invalid value")
+
+
+# at the except you type of error that could occur
+# there can be many except used to anticipate different errors
+
+# COMMENTS - used to explain why and how not what r.g assumptions
+
+# CLASSES
+# used to model real world objects
+# pascal naming convention(used for classes where you capitalize the first letter)
+class Point:
+    def __init__(self, x, y):
+        self.x = x  # same as saying point = Point() \n point.x = 10
+        self.y = y
+
+    def move(self):
+        print("move")
+
+    def draw(self):
+        print("draw")
+
+
+# creating an object
+# var_name = ClassName()
+# point1 = Point()
+# assigning attributes to objects
+# point1.x = 10
+
+# CONSTRUCTORS
+# It is a function that gets called when defining an object
+# __init__(self, parameter1,..., parameterN):
+# self.x = x \n self.y = y
+# we can change the attribute of an object by object_name.attribute_name = new_value
+# person class
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def talk(self):
+        print(f"Hi I am {self.name}")
+
+
+# INHERITANCE
+# where a clas inherits a method from its parent class
+# python doesn't like an empty class, and to sort this out you can use pas
+# class ClassName(ParentClassName):
+class Mammals:
+    def walk(self):
+        print("walk")
+
+
+class Dog(Mammals):  # inheritance where dog inherits from mammals
+    def bark(self):
+        print("bark")
+
+
+# MODULES
+# These are files with different python codes
+# It enhances reusability
+# to import specific modules, use from filename import module
+# when a module is imported it becomes an object so a t operator is used to access its methods
+print(module.kg_to_pounds(69))  # module importation
+print(pounds_to_kg(153))  # specific module importation allows for direct use of functions
+
+
+# PACKAGES
+# a package is a container for related modules in pycharm, create a package file, and in the file create a
+# file with the name __init__.py. This will be interpreted as a package
+# Importing a module
+# You can import the entire module i.e. import package_name.file_name
+# To use functions in the module: module_name.method
+# alternatively: from package_name.module_name import method1, ... , methodN
+
+# IN BUILT MODULES
+# from browser, lookup python 3 module index
+# import module_name
+# random.random() - generates  random number between 0 and 1
+# random.randint(x,y) - generates a random integer between x and y
+# random.choice(list_name) - returns a rando element from a list
+# Dice class
+class Dice:
+    def roll(self):
+        first = random.randint(1, 6)
+        second = random.randint(1, 6)
+        return first, second  # returns both values
+
+
+dice = Dice()
+print(dice.roll())
+
+# FILES AND DIRECTORIES
