@@ -1,11 +1,12 @@
 import random
 import module  # used to import modules
 from module import pounds_to_kg  # used to import a specific module method
+from pathlib import Path
 
 print("David Mwalimu")
 print("o----")
 print(" ||||")
-print("*" * 10)  # prinys * 10 times
+print("*" * 10)  # prints * 10 times
 # the above code is an expression i.e. it produces a value
 
 
@@ -44,9 +45,9 @@ name2 = input("What is your name? ")
 print("Hi " + name)
 num1 = int(input("Enter the first number: "))  # type conversion from the get go
 num2 = input("Enter the second number: ")
-sum = num1 + int(num2)
+sum3 = num1 + int(num2)
 print(type(num1))  # type() is an inbuilt function used to display the value's datatype
-print("The sum of ", num1, " and " + num2 + " is ", sum)  # concatenation of a string and an int
+print("The sum of ", num1, " and " + num2 + " is ", sum3)  # concatenation of a string and an int
 
 # pounds to kg
 pounds = int(input("Enter your weight in pounds: "))
@@ -56,10 +57,10 @@ print("You weigh ", pounds, "pounds which is equivalent to ", kg, " kgs")
 # STRINGS
 course = "Python's course for beginners"
 course = 'Python\'s course for beginners'  # escape characters can be used to prevent termination of the string
-# tripple quotes can be used to write multi-line strings
+# triple quotes can be used to write multi-line strings
 print(course[0])  # indexing - used to get the value of a string at a particular index, starting from 0
 # negative indexing i.e. course[-1] are used to access characters from the end of the string
-print(course[0:3])  # returns multiple characters i.e the characters from the first number to the one before the last
+print(course[0:3])  # returns multiple characters i.e. the characters from the first number to the one before the last
 # one
 print(course[0:])  # prints all the characters in the string. The end of the string is assumed to be the end index
 print(course[:5])  # prints all characters up to the fifth. 0 is assumed to be the starting index by the interpreter.
@@ -84,8 +85,8 @@ print(course.find('P'))  # find() - case sensitive method that returns the index
 # index of a word
 print(course.replace("course", "class"))  # case-sensitive method used to replace a character or a sequence of
 # characters. The character(s) to be replaced is placed first, then the replacer second.
-print(
-    "Python" in course)  # in expression is used to check whether characters are in a string. It produces boolean values
+print("Python" in course)  # in expression is used to check whether characters are in a string.
+# It produces boolean values
 
 # ARITHMETIC OPERATIONS
 # +: addition
@@ -94,10 +95,9 @@ print(
 # //: int division
 # **: exponent
 # x+(-,/,*)=3: augmented assignment operator
+# operation precedence
 # exponentiation
 # multiplication/division
-
-# operation precedence
 # parenthesis
 # addition/subtraction
 
@@ -115,7 +115,8 @@ print(round(x))  # rounds off a number
 is_hot = True
 if is_hot:
     print("It's a hot day, enjoy your day")
-    print("Drink plenty of water")  # indented statements will be executed if the evaluation is true
+    print("Drink plenty of water")
+# indented statements will be executed if the evaluation is true
 # elif can be used if there are more conditions
 else:
     print("It's a cold day")
@@ -188,7 +189,7 @@ while tries < guess_limit:
         break  # terminates our loop
 else:
     print("Sorry, you failed")
-# we can have a while else statement where the else portion is executed when the condition in the while loop evaluates
+# we can have a while-else statement where the else portion is executed when the condition in the while loop evaluates
 # to false
 
 
@@ -213,9 +214,9 @@ print(sum1)
 
 # NESTED LOOPS
 for x in range(4):  # sample x coordinate
-    for y in range(3):  # sample y cordinate
+    for y in range(3):  # sample y coordinate
         print(f"{x},{y}")
-# for each outer iteration, all inner terations must be executed
+# for each outer iteration, all inner iterations must be executed
 
 # F SHAPE
 numbers = [5, 2, 5, 2, 2]
@@ -229,15 +230,16 @@ for x_count in numbers:
     print(output)
 
 # LISTS
+# list()- function used to convert items into lists
 names = ["John", "Bob", "Mosh", "Sarah", "Mary"]
 print(names[0])  # indexing is used to print individual elements(similar to strings)
 # largest number
 num = [12, 14, 18, 11, 16]
-max = num[0]
+max_num = num[0]
 for x in num:
-    if max < x:
-        max = x
-print(max)
+    if max_num < x:
+        max_num = x
+print(max_num)
 
 # 2D lists
 matrix = [[1, 2, 3],
@@ -257,13 +259,13 @@ numbers.remove(11)  # used to remove an element from the list
 numbers.clear()  # used to delete all the elements in the list
 numbers.pop()  # removes the last element in our list
 numbers.index(12)  # returns the index of the element and if it doesn't exist, an error is returned
-12 in numbers  # returns a boolean expression depending on whether the element exists in the list
+print(12 in numbers)  # returns a boolean expression depending on whether the element exists in the list
 numbers.count(11)  # returns the number of times an element appears in a list
 numbers.sort()  # doesn't return a value, instead sorts the list
 numbers.reverse()  # reversed the list  \
 numbers2 = numbers.copy()  # copies the elements of list1 into list2 
 # REMOVING DUPLICATES
-num2 = [4, 4, 4, 5, 6, 7, 7, 7, 8, 9, 10];
+num2 = [4, 4, 4, 5, 6, 7, 7, 7, 8, 9, 10]
 # modifying a list while iterating over it can lead to unexpected behavior.
 uniques = []
 for z in num2:
@@ -274,31 +276,59 @@ print(uniques)
 # TUPLES
 # Similar to lists but are immutable
 numbers3 = (1, 2, 3)  # defining a tuple
-# a tuple has count and index as its method with the rest being majic methods
+# a tuple has count and index as its method with the rest being magic methods
 
 # UNPACKING
 coordinates = (1, 2, 3)
 a1, a2, a3 = coordinates  # assigns the elements in the tuple to the variables on the left respectively
-# unpacking can also work for lists
 
-# DICTIONARIES
-# used to store values that comes as key value pairs
+
+# unpacking can also work for lists
+# a list can also be unpacked into function arguments as follows
+def func(a, b, c, d):
+    print(a, b, c, d)
+
+
+my_list = [1, 2, 3, 4]
+func(*my_list)  # list elements become the arguments in the function
+
+
+# the number of arguments must be the same as the length of the list we are unpacking
+
+# we can use packing to pass arguments into a tuple if we do not know the number of arguments
+def func2(*args2):
+    return sum(args2)
+
+
+print(func2(11, 30, 35))  # the sum of any number of values passed as arguments will be printed
+
+# DICTIONARIES used to store values that comes as key value pairs
+# values in a dictionary can be of any data type (including lists and tuples)and
+# can be duplicated, whereas keys can’t be repeated and must be immutable
+# dict({key:value}) - method used to create a dictionary
 client = {
     "Name": "John Smith",
     "Age": 30,
     "is_verified": True
     # each key should be unique
 }
-# access is done using [] i.e
+# access is done using [] i.e.
 print(client["Name"])  # case sensitive
 # if the key doesn't exist, an error will be thrown alternatively, we could use the get method which does not throw
 # an error in case the key doesn't exist. It instead returns none dictionary.get(key, default)
 print(client.get("name"))  # returns None since it's also case-sensitive
 # we can also use get to define a new key value pair
-print(client.get("Birthday", "March 11th 2004"))
+print(client.get("Birthday", "March 11th 2004"))  # only prints the value pair, does not mutate the dictionary
 # we can also update and add values using []
 client["Height"] = "6'2"  # adding a new key value pair
 client["Name"] = "David Mwalimu"  # changing an existing key value pair
+# we can also use the dictionary.update() method to update/ add onto a dictionary dictionary.update({key:value})
+client.update({"Name": "David Nzambuli", "Employment": "Data Analyst"})  # overwrites the Name key and adds employment
+# we can delete key value pairs using the del() method i.e. del(dictionary[key])
+del (client["Age"])  # deletes the Age key value pair
+# dictionary.keys() - returns dict_keys(list of all the keys in the dictionary)
+print(client.keys())
+# dictionary.values() - returns dict_values(list of all values in the dictionary)
 # NUMBERS TO WORDS
 phone = input("Phone: ")
 digits = {
@@ -319,8 +349,8 @@ for x in phone:
 print(output)
 # EMOJI CONVERTER
 message = input(">")
-words = message.split(" ")  # .split() is a methods used to separate  string with the separaton happening at the point
-# defined in the split method. It returns a list with the separation making the elements. The split element i not
+words = message.split(" ")  # .split() is a methods used to separate  string with the separation happening at the point
+# defined in the split method. It returns a list with the separation making the elements. The split element is not
 # returned
 emojis = {
     ":)": "😁",
@@ -344,7 +374,7 @@ greet_user()
 print("Finish")
 
 
-# a function must alway be called after it is defined
+# a function must always be called after it is defined
 
 # PARAMETERS
 # values taken by a function
@@ -361,7 +391,7 @@ greet_user2(name3)
 # for positional arguments, the position matters i.e. they will be returned in the order they are provided
 
 # KEYWORD ARGUMENTS
-# defined using the parameter nme when providing the arguments
+# defined using the parameter name when providing the arguments
 def greet_user3(first_name, last_name):
     print(f"Hi {first_name} {last_name}")
     print("Welcome aboard")
@@ -370,7 +400,7 @@ def greet_user3(first_name, last_name):
 greet_user3("Nzambuli", first_name="David")  # keyword argument
 
 
-# Keyword arguments should always come after keyword
+# Keyword arguments should always come after positional arguments
 
 # RETURN STATEMENT
 # used to produce the output of a function
@@ -378,8 +408,8 @@ def square(number):
     return number ** 2
 
 
-print(square(16));
-# without the return statement, the function will return None(represents the abscence of a value) when we print the
+print(square(16))
+# without the return statement, the function will return None(represents the absence of a value) when we print the
 # output of the function if we replace the return with print, we get both the square and None as output
 
 # CREATING A REUSABLE FUNCTION
@@ -387,15 +417,15 @@ text = input(">")
 
 
 def emoji_converter(user_input):
-    words = user_input.split(" ")
-    emojis = {
+    words1 = user_input.split(" ")
+    emojis1 = {
         ":)": "😄",
         ":(": "😟",
         ":|": "😐"
     }
     output3 = ""
-    for word in words:
-        output3 += emojis.get(word, word) + " "
+    for word1 in words:
+        output3 += emojis.get(word1, word1) + " "
     return output3
 
 
@@ -469,9 +499,9 @@ class Dog(Mammals):  # inheritance where dog inherits from mammals
 
 # MODULES
 # These are files with different python codes
-# It enhances reusability
+# It enhances re-usability
 # to import specific modules, use from filename import module
-# when a module is imported it becomes an object so a t operator is used to access its methods
+# when a module is imported it becomes an object so a dot operator is used to access its methods
 print(module.kg_to_pounds(69))  # module importation
 print(pounds_to_kg(153))  # specific module importation allows for direct use of functions
 
@@ -489,7 +519,7 @@ print(pounds_to_kg(153))  # specific module importation allows for direct use of
 # import module_name
 # random.random() - generates  random number between 0 and 1
 # random.randint(x,y) - generates a random integer between x and y
-# random.choice(list_name) - returns a rando element from a list
+# random.choice(list_name) - returns a random element from a list
 # Dice class
 class Dice:
     def roll(self):
@@ -502,3 +532,21 @@ dice = Dice()
 print(dice.roll())
 
 # FILES AND DIRECTORIES
+# Absolute path - start rom the root directory and go elsewhere
+# Relative path - start from the current directory and moves from there
+# if we don't pass an argument in Path() it will reference the current directory
+path = Path("ecommerce")
+# .exist() method checks whether a path exists
+print(path.exists())
+# .mkdir() method is used to create new directories
+path2 = Path("emails")  # makes a directory called emails
+# .rmdir() - method that removes the directory assigned to the variable name where it is called
+print(path.glob("*"))  # prints all the files and directories
+print(path.glob("*.*"))  # prints only the files in the directory
+print(path.glob("*.py"))  # print all the python files available in the directory
+# we can use the above to iterate over the files available in the directory
+
+# PIP AND PYPI
+# python package index(PYPI) (pypi.org)
+# to install a package from pypi, click it and run the command in the terminal
+# after installing, you can import the package as a module
