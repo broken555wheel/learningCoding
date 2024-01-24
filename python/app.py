@@ -94,11 +94,11 @@ print("Python" in course)  # in expression is used to check whether characters a
 # /: float division
 # //: int division
 # **: exponent
-# x+(-,/,*)=3: augmented assignment operator
+# x(+,-,/,*)=3: augmented assignment operator
 # operation precedence
 # exponentiation
-# multiplication/division
 # parenthesis
+# multiplication/division
 # addition/subtraction
 
 
@@ -107,11 +107,12 @@ x = 2.9
 print(round(x))  # rounds off a number
 # abs() returns the absolute value of a number
 # import math - used to import the math method.
-# math.ceil(a) - rounds up a number
+ # math.ceil(a) - rounds up a number. math.floor() - rounds down a number
 # python3 math module for others
 
 
 # IF STATEMENTS
+# created by indenting statements after the conditional block
 is_hot = True
 if is_hot:
     print("It's a hot day, enjoy your day")
@@ -140,7 +141,7 @@ if has_high_income and has_good_credit:
     print("Eligible for loan")
 # logical or returns true if either of the statements is true
 # logical not returns the opposite boolean value
-if has_high_income or not has_good_credit:
+if not has_high_income or not has_good_credit:
     print("Not eligible for loan")
 
 # COMPARISON OPERATORS
@@ -170,12 +171,12 @@ elif unit.upper() == "K":
 else:
     print('Invalid unit entered. Enter a unit that is either L for pounds or K for kilograms')
 
-# WHILE LOOPS
+# WHILE ELSE LOOPS
 # used to execute a block of code as long as a condition remains true
 i = 1
 while i <= 5:
     print("*" * i)
-    i += 1
+    i += 1  # incrementer used to ensure that the loop does not run infinitely in this case
 
 # guessing game
 correct = 12
@@ -221,7 +222,7 @@ for x in range(4):  # sample x coordinate
 # F SHAPE
 numbers = [5, 2, 5, 2, 2]
 for number in numbers:
-    print("*" * number)
+    print("*" * number)  #Multiplying a string by a number prints the string as many times as the number it is being multiplied with
 # using nested loop
 for x_count in numbers:
     output = ''
@@ -254,6 +255,7 @@ for a in matrix:
 # LIST METHODS
 numbers.append(20)  # adds the number at the end of the list
 print(numbers)
+numbers.extend([13,12,12,13,14])  # adds the list within extend to the end of the list
 numbers.insert(0, 10)  # used to add an element at a specific index i.e. list.insert(index,element)
 numbers.remove(11)  # used to remove an element from the list
 numbers.clear()  # used to delete all the elements in the list
@@ -262,7 +264,8 @@ numbers.index(12)  # returns the index of the element and if it doesn't exist, a
 print(12 in numbers)  # returns a boolean expression depending on whether the element exists in the list
 numbers.count(11)  # returns the number of times an element appears in a list
 numbers.sort()  # doesn't return a value, instead sorts the list
-numbers.reverse()  # reversed the list  \
+numbers4 = sorted(numbers)  # returns a new sorted list without altering the original list
+numbers.reverse()  # reversed the list 
 numbers2 = numbers.copy()  # copies the elements of list1 into list2 
 # REMOVING DUPLICATES
 num2 = [4, 4, 4, 5, 6, 7, 7, 7, 8, 9, 10]
@@ -313,7 +316,7 @@ client = {
     # each key should be unique
 }
 # access is done using [] i.e.
-print(client["Name"])  # case sensitive
+print(client["Name"])  # case-sensitive and must have the quotes
 # if the key doesn't exist, an error will be thrown alternatively, we could use the get method which does not throw
 # an error in case the key doesn't exist. It instead returns none dictionary.get(key, default)
 print(client.get("name"))  # returns None since it's also case-sensitive
@@ -433,18 +436,31 @@ print(emoji_converter(text))
 # input and output shouldn't be included in functions since they should be reusable
 
 # EXCEPTIONS
-# exit coe 0 means that our program executed with no problem
+# exit code 0 means that our program executed with no problem
+# raise keyword is used to return an error
+u = -1
+if u < 0:
+    raise ValueError("x should be a positive number")
 # anything but 0 means that our program crashed
+# NameError - Raised when a local or global name is not found
+# KeyError - Raised when a dictionary key is not found.
+# AttributeError - Raised when an attribute reference or assignment fails.
+# FileNotFoundError - Raised when a file or directory is requested but cannot be found.
+# TypeError - Raised when an operation or function is applied to an object of an inappropriate.
+# ValueError - Raised when a function receives an argument of the correct type but with an invalid value.
+# ZeroDivisionError - Raised when division or modulo by zero is encountered.
 # try except is used to handle errors
 try:
     miaka = int(input("Age: "))
     print(age)
-except ValueError:
-    print("Invalid value")
+except ValueError as e:
+    print(f"Invalid value: {e}")
 
 
 # at the except you type of error that could occur
 # there can be many except used to anticipate different errors
+# we can use an else block to execute code if the try doesn't fail
+# a finally block can also be added. It will be executed regardless
 
 # COMMENTS - used to explain why and how not what r.g assumptions
 
