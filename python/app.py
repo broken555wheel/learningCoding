@@ -2,6 +2,10 @@ import random
 import module  # used to import modules
 from module import pounds_to_kg  # used to import a specific module method
 from pathlib import Path
+# In interactive mode, the last printed expression is assigned to the variable _.
+# Python hs support for complex numbers and uses the j or J suffix to indicate the imaginary part (e.g. 3+5j)
+# If you don’t want characters prefaced by \ to be interpreted as special characters, you can use raw strings by
+# adding an r before the first quote. A raw string may not end in an odd number of '\'
 
 print("David Mwalimu")
 print("o----")
@@ -66,7 +70,8 @@ print(course[0:])  # prints all the characters in the string. The end of the str
 print(course[:5])  # prints all characters up to the fifth. 0 is assumed to be the starting index by the interpreter.
 print(course[:])  # prints all the characters of the string
 print(course[1:-1])  # prints all the characters up to the one before the last one(pretty simple)
-
+# out of range slice indexes are handled gracefully when used for slicing
+print(course[0:50])  # no error will be returned
 # FORMATTED STRINGS
 # variable names should be descriptive
 first = "John"
@@ -100,14 +105,14 @@ print("Python" in course)  # in expression is used to check whether characters a
 # parenthesis
 # multiplication/division
 # addition/subtraction
-
+# mixed operations convert integers to floats
 
 # MATH FUNCTIONS
 x = 2.9
 print(round(x))  # rounds off a number
 # abs() returns the absolute value of a number
 # import math - used to import the math method.
- # math.ceil(a) - rounds up a number. math.floor() - rounds down a number
+# math.ceil(a) - rounds up a number. math.floor() - rounds down a number
 # python3 math module for others
 
 
@@ -222,7 +227,8 @@ for x in range(4):  # sample x coordinate
 # F SHAPE
 numbers = [5, 2, 5, 2, 2]
 for number in numbers:
-    print("*" * number)  #Multiplying a string by a number prints the string as many times as the number it is being multiplied with
+    print("*" * number)  # Multiplying a string by a number prints the string as many times as the number it is
+# being multiplied with
 # using nested loop
 for x_count in numbers:
     output = ''
@@ -255,11 +261,11 @@ for a in matrix:
 # LIST METHODS
 numbers.append(20)  # adds the number at the end of the list
 print(numbers)
-numbers.extend([13,12,12,13,14])  # adds the list within extend to the end of the list
+numbers.extend([13, 12, 12, 13, 14])  # adds the list within extend to the end of the list
 numbers.insert(0, 10)  # used to add an element at a specific index i.e. list.insert(index,element)
 numbers.remove(11)  # used to remove an element from the list
 numbers.clear()  # used to delete all the elements in the list
-numbers.pop()  # removes the last element in our list
+numbers.pop()  # removes the last element in our list (also in arrays)
 numbers.index(12)  # returns the index of the element and if it doesn't exist, an error is returned
 print(12 in numbers)  # returns a boolean expression depending on whether the element exists in the list
 numbers.count(11)  # returns the number of times an element appears in a list
@@ -280,6 +286,10 @@ print(uniques)
 # Similar to lists but are immutable
 numbers3 = (1, 2, 3)  # defining a tuple
 # a tuple has count and index as its method with the rest being magic methods
+# when declaring a tuple with a single element, use a comma at the end i.e
+my_tuple = ("David",)
+tuple3 = numbers3 + my_tuple  # adding of elements in different tuples to yield a new tuple
+# Tuple operations: iteration, concatenation, membership, length, repetition
 
 # UNPACKING
 coordinates = (1, 2, 3)
@@ -309,6 +319,7 @@ print(func2(11, 30, 35))  # the sum of any number of values passed as arguments 
 # values in a dictionary can be of any data type (including lists and tuples)and
 # can be duplicated, whereas keys can’t be repeated and must be immutable
 # dict({key:value}) - method used to create a dictionary
+# only one entry is allpwed per key
 client = {
     "Name": "John Smith",
     "Age": 30,
