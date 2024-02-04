@@ -236,52 +236,6 @@ for x_count in numbers:
         output += 'x'
     print(output)
 
-# LISTS
-# list()- function used to convert items into lists
-names = ["John", "Bob", "Mosh", "Sarah", "Mary"]
-print(names[0])  # indexing is used to print individual elements(similar to strings)
-# largest number
-num = [12, 14, 18, 11, 16]
-max_num = num[0]
-for x in num:
-    if max_num < x:
-        max_num = x
-print(max_num)
-
-# 2D lists
-matrix = [[1, 2, 3],
-          [4, 5, 6],
-          [7, 8, 9]]
-# Accessing of individual elements is done by indexing
-# Looping is done using nested for loops
-for a in matrix:
-    for b in a:
-        print(b)  # prints all the elements in the list
-
-# LIST METHODS
-numbers.append(20)  # adds the number at the end of the list
-print(numbers)
-numbers.extend([13, 12, 12, 13, 14])  # adds the list within extend to the end of the list
-numbers.insert(0, 10)  # used to add an element at a specific index i.e. list.insert(index,element)
-numbers.remove(11)  # used to remove an element from the list
-numbers.clear()  # used to delete all the elements in the list
-numbers.pop()  # removes the last element in our list (also in arrays)
-numbers.index(12)  # returns the index of the element and if it doesn't exist, an error is returned
-print(12 in numbers)  # returns a boolean expression depending on whether the element exists in the list
-numbers.count(11)  # returns the number of times an element appears in a list
-numbers.sort()  # doesn't return a value, instead sorts the list
-numbers4 = sorted(numbers)  # returns a new sorted list without altering the original list
-numbers.reverse()  # reversed the list 
-numbers2 = numbers.copy()  # copies the elements of list1 into list2 
-# REMOVING DUPLICATES
-num2 = [4, 4, 4, 5, 6, 7, 7, 7, 8, 9, 10]
-# modifying a list while iterating over it can lead to unexpected behavior.
-uniques = []
-for z in num2:
-    if z not in uniques:
-        uniques.append(z)
-print(uniques)
-
 # TUPLES
 # Similar to lists but are immutable
 numbers3 = (1, 2, 3)  # defining a tuple

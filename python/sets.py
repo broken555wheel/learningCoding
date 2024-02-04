@@ -27,5 +27,13 @@ sets = []
 for i in range(n):
     sets.append(set(map(int, input().split())))
 superset = all(set_a > x for x in sets)  # checks if all elements meet the specified criteria. Any checks if at least
-# one does
+# one does. Returns boolean values
 print(superset)
+
+# finding runners-up
+n = int(input())
+arr = map(int, input().split())
+unique_scores = list(set(arr))
+unique_scores.sort(reverse=True)
+runner_up = unique_scores[1]
+print(runner_up)
