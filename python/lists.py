@@ -35,6 +35,7 @@ numbers.count(11)  # returns the number of times an element appears in a list
 numbers.sort()  # doesn't return a value, instead sorts the list
 numbers4 = sorted(numbers)  # returns a new sorted list without altering the original list
 numbers.reverse()  # reversed the list
+# (x).join(list_name) - concatenates list elements together with x as their separator
 numbers2 = numbers.copy()  # copies the elements of list1 into list2
 # REMOVING DUPLICATES
 num2 = [4, 4, 4, 5, 6, 7, 7, 7, 8, 9, 10]
