@@ -5,7 +5,7 @@ from pathlib import Path
 # In interactive mode, the last printed expression is assigned to the variable _.
 # Python hs support for complex numbers and uses the j or J suffix to indicate the imaginary part (e.g. 3+5j)
 # If you don’t want characters prefaced by \ to be interpreted as special characters, you can use raw strings by
-# adding an r before the first quote. A raw string may not end in an odd number of '\'
+# adding an r before the first quote. A raw string can not end in an odd number of '\'
 
 print("David Mwalimu")
 print("o----")

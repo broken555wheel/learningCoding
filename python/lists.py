@@ -32,13 +32,13 @@ numbers.pop()  # removes the last element in our list (also in arrays)
 numbers.index(12)  # returns the index of the element and if it doesn't exist, an error is returned
 print(12 in numbers)  # returns a boolean expression depending on whether the element exists in the list
 numbers.count(11)  # returns the number of times an element appears in a list
-numbers.sort()  # doesn't return a value, instead sorts the list
+numbers.sort()  # doesn't return a value, instead sorts the list. Mutates the list
 numbers4 = sorted(numbers)  # returns a new sorted list without altering the original list
 numbers.reverse()  # reversed the list
 # (x).join(list_name) - concatenates list elements together with x as their separator
 numbers2 = numbers.copy()  # copies the elements of list1 into list2
 # REMOVING DUPLICATES
-num2 = [4, 4, 4, 5, 6, 7, 7, 7, 8, 9, 10]
+num2 = [4, 4, 4, 5, 6, 7, 7, 7, 8, 9, 10] # you could use sets to find the uniques
 # modifying a list while iterating over it can lead to unexpected behavior.
 uniques = []
 for z in num2:

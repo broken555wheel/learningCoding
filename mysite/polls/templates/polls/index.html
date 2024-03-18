@@ -1,0 +1,12 @@
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    <!-- url is a build in tag used to generate urls for views -->
+    <!-- the name of my url as defined in my urls file follows url in the above line of code. In the above case it tells django to look for a url named detail under an app named polls(namespacing) -->
+    <!-- question.id provides dynamic data to the Url -->
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
