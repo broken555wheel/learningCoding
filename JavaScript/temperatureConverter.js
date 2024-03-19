@@ -17,3 +17,4 @@ console.log(`The temperature is ${fahrenheit} degrees Fahrenheit`)
 let Newton = celsius*(33/100);
 Math.floor(Newton);
 console.log(Newton);
+console.log("Mwalimu")
